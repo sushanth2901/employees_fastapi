@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage('git_clone'){
             steps {
-                bash test.sh
+                git clone 
             }
         }
     }
