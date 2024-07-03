@@ -9,17 +9,16 @@ pipeline {
     stages {
         stage('git_clone'){
             steps {
-                sh "git clone -b ${BRANCH} ${REPO_URL} ${jenkins_dir}"
+                sh "git clone -b ${BRANCH} ${REPO_URL} ${WORKSPACE_DIR}"
             }
         }
         stage('deploy'){
             steps{
                 sh ''' 
-                cd ${jenkins_dir}
+                cd ${WORKSPACE_DIR}
                 sh test.sh
                 '''
             }
         }
-    
     }
 }
