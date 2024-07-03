@@ -12,14 +12,12 @@ pipeline {
                 sh "git clone -b ${BRANCH} ${REPO_URL} ${WORKSPACE_DIR}"
             }
         }
-    }
-    stages {
         stage('deploy'){
             steps{
-                cd workspacke_dir
+                cd ${WORKSPACE_DIR}
                 sh test.sh
             }
         }
-    }
     
+    }
 }
