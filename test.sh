@@ -1,7 +1,7 @@
 #!bin/sh
 
-CPU_THRESHOLD=2
-MEMORY_THRESHOLD=2
+CPU_THRESHOLD=1
+MEMORY_THRESHOLD=1
 
 EMAIL_RECIPIENTS="your_email@example.com"
 EMAIL_SUBJECT="Resource Utilization Alert"
