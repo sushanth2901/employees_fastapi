@@ -1,7 +1,7 @@
 #bin/bash
 
-CPU_THRESHOLD=80
-MEMORY_THRESHOLD=80
+CPU_THRESHOLD=2
+MEMORY_THRESHOLD=2
 
 EMAIL_RECIPIENTS="your_email@example.com"
 EMAIL_SUBJECT="Resource Utilization Alert"
@@ -16,7 +16,7 @@ echo "Current Memory Utilization: ${MEMORY_UTILIZATION}%"
 # Check if the thresholds are exceeded
 if (( $(echo "$CPU_UTILIZATION > $CPU_THRESHOLD" | bc -l) )) || (( $(echo "$MEMORY_UTILIZATION > $MEMORY_THRESHOLD" | bc -l) )); then
     echo "Threshold exceeded, sending email notification."
-    echo -e "Resource Utilization Alert:\n\nCPU Utilization: ${CPU_UTILIZATION}%\nMemory Utilization: ${MEMORY_UTILIZATION}%\n\nOne or both of these metrics have exceeded their respective thresholds." | mail -s "$EMAIL_SUBJECT" "$EMAIL_RECIPIENTS"
+    echo -e "Resource Utilization Alert:\n\nCPU Utilization: ${CPU_UTILIZATION}%\nMemory Utilization: ${MEMORY_UTILIZATION}%\n\n"
 else
     echo "Resource utilization is within acceptable limits."
 fi
