@@ -14,9 +14,9 @@ pipeline {
         }
         stage('deploy'){
             steps{
-                sh ''' 
+                bash ''' 
                 cd ${WORKSPACE_DIR}
-                sh test.sh
+                bash test.sh
                 '''
             }
         }
