@@ -1,4 +1,4 @@
-#bin/bash
+#!bin/sh
 
 CPU_THRESHOLD=2
 MEMORY_THRESHOLD=2
